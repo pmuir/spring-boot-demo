@@ -1,2 +1,5 @@
 extensions:
   - name: spotbugsMaven
+  - name: spotbugsPublish
+    parameters:
+      spotbugsProvider: github
