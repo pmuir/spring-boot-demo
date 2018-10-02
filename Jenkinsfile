@@ -8,6 +8,13 @@ pipeline {
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
+      stage('Pre') {
+        steps {
+          container('maven') {
+            sh 'jx step pre extend'
+          }
+        }
+      }
       stage('CI Build and push snapshot') {
         when {
           branch 'PR-*'
@@ -86,6 +93,7 @@ pipeline {
     }
     post {
         always {
+            sh 'jx step post run'
             cleanWs()
         }
         failure {
