@@ -11,6 +11,7 @@ pipeline {
       stage('Pre') {
         steps {
           container('maven') {
+            sh 'jx upgrade cli'
             sh 'jx step pre extend'
           }
         }
@@ -68,7 +69,6 @@ pipeline {
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
 
-            sh 'jx version'
             sh 'jx step post run'
             sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
           }
