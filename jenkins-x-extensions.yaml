@@ -3,3 +3,7 @@ extensions:
   spotbugsPublish:
     parameters:
       spotbugsProvider: github
+  jacocoMaven:
+  jacocoPublish:
+    parameters:
+      jacocoProvider: github
