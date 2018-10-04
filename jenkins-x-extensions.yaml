@@ -1,9 +1,9 @@
 extensions:
-  spotbugsMaven:
-  spotbugsPublish:
+  jx.spotbugsMaven:
+  jx.spotbugsMavenPublish:
     parameters:
-      spotbugsProvider: github
-  jacocoMaven:
-  jacocoMavenPublish:
+      provider: github
+  jx.jacocoMaven:
+  jx.jacocoMavenPublish:
     parameters:
-      jacocoProvider: github
+      provider: github
