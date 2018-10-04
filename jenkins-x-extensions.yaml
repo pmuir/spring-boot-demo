@@ -4,6 +4,6 @@ extensions:
     parameters:
       spotbugsProvider: github
   jacocoMaven:
-  jacocoPublish:
+  jacocoMavenPublish:
     parameters:
       jacocoProvider: github
