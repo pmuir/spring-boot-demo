@@ -11,7 +11,6 @@ pipeline {
       stage('Pre') {
         steps {
           container('maven') {
-            sh 'jx upgrade cli'
             sh 'jx step pre extend'
           }
         }
@@ -69,7 +68,6 @@ pipeline {
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
 
-            sh 'jx step post run'
             sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
           }
         }
@@ -96,6 +94,9 @@ pipeline {
     post {
         always {
             cleanWs()
+            container('maven') {
+                sh 'jx step post run'
+            }
         }
         failure {
             input """Pipeline failed. 
