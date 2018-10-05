@@ -93,10 +93,11 @@ pipeline {
     }
     post {
         always {
-            cleanWs()
             container('maven') {
                 sh 'jx step post run'
             }
+            cleanWs()
+
         }
         failure {
             input """Pipeline failed. 
