@@ -1,9 +1,15 @@
 extensions:
-  jx.spotbugsMaven:
-  jx.spotbugsMavenPublish:
+  - name: spotbugsMaven
+    namespace: jx
+  - name: spotbugsMavenPublish
+    namespace: jx
     parameters:
-      provider: github
-  jx.jacocoMaven:
-  jx.jacocoMavenPublish:
+    - name: provider
+      value: github
+  - name: jacocoMaven
+    namespace: jx
+  - name: jacocoMavenPublish
+    namespace: jx
     parameters:
-      provider: github
+    - name: provider
+      value: github
