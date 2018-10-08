@@ -8,8 +8,6 @@ extensions:
       value: github
   - name: jacocoMaven
     namespace: jx
-  - name: jacocoMavenPublish
-    namespace: jx
     parameters:
     - name: provider
       value: github
