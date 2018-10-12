@@ -1,12 +1,5 @@
 extensions:
-  - name: spotbugsMaven
-    namespace: jx
-  - name: spotbugsMavenPublish
-    namespace: jx
-    parameters:
-    - name: provider
-      value: github
-  - name: jacocoMaven
+  - name: mavenCodeQuality
     namespace: jx
     parameters:
     - name: provider
